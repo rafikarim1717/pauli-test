@@ -11,6 +11,10 @@
     /* background-color: #F8FAFC; */
 }
 
+.back-home-btn {
+    padding: 0.5rem 0.2rem;
+}
+
 .result-header {
     display: flex;
     flex-direction: column;

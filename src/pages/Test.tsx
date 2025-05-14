@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { formatTime } from '../utils/formatTime';
 import ProgressBar from '../components/ProgressBar';
@@ -66,7 +66,7 @@ const Test = () => {
         setStartTime(Date.now());
     };
 
-    const handleInput = (input: number) => {
+    const handleInput = useCallback((input: number) => {
         const correct = (num1 + num2) % 10;
         const isCorrect = input === correct;
         const endTime = Date.now();
@@ -95,7 +95,24 @@ const Test = () => {
         } else {
             generateNewNumbers();
         }
-    };
+    }, [num1, num2, startTime, questionCount, questionsPerRound, maxQuestions]);
+
+
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            // Accept main numbers (0-9) and numpad numbers (Numpad0-Numpad9)
+            if (/^[0-9]$/.test(e.key)) {
+                handleInput(Number(e.key));
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [handleInput]); // Add handleInput to dependencies if it's defined inline or memoized
+
 
     return (
         <>

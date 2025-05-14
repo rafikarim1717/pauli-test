@@ -1,17 +1,23 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import InstructionVideo from '../components/InstructionsVideo';
 import './Home.css';
 
 const Home = () => {
     const [userName, setUserName] = useState('');
     const [showModal, setShowModal] = useState(false);
     const [showTestOption, setShowTestOption] = useState(false);
+    const [showVideoTutorial, setShowVideoTutorial] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const navigate = useNavigate();
 
     const handleStart = () => {
         setShowTestOption(true);
+    };
+
+
+    const handleVideoTutorial = () => {
+        setShowVideoTutorial(true);
     };
 
     const handleCloseTestOption = () => {
@@ -49,6 +55,10 @@ const Home = () => {
                     <button className="instructions-btn" onClick={handleInstructions}>
                         Instruction
                     </button>
+                    <button className="instructions-btn" onClick={handleVideoTutorial}>
+                        Video Turtorial
+                    </button>
+
                 </div>
             </div>
 
@@ -113,7 +123,7 @@ const Home = () => {
                             }
                         </div>
 
-                        <div className="modal-footer">
+                        <div className="modal-instructions-footer">
                             <button onClick={handlePrev} disabled={currentPage === 1}>
                                 Previous
                             </button>
@@ -131,6 +141,10 @@ const Home = () => {
 
                     </div>
                 </div>
+            )}
+
+            {showVideoTutorial && (
+                <InstructionVideo onClose={() => setShowVideoTutorial(false)} />
             )}
 
             {showTestOption && (
