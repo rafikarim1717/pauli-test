@@ -1,0 +1,127 @@
+.test-container {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100vh;
+    /* 👈 this ensures full viewport height */
+}
+
+.test-card-1 {
+    grid-area: 1 / 1 / 2 / 2;
+    padding: 1rem;
+    align-items: center;
+    border-radius: 0.25rem
+}
+
+.test-card-2 {
+    grid-area: 1 / 2 / 2 / 3;
+    background-color: #e6e8ea;
+}
+
+
+.top-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.25rem;
+    border-bottom: 0.125rem solid #a5a4a4;
+}
+
+.round-question-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+    /* space between elements */
+}
+
+.vertical-separator {
+    width: 2px;
+    height: 20px;
+    background-color: #ccc;
+    /* or your primary color */
+}
+
+.timer {
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: #1E293b;
+}
+
+.history {
+    padding: 1.5rem 2rem;
+    max-height: 550px;
+    overflow-y: auto;
+}
+
+.history ul {
+    /* list-style-type: ; */
+    /* margin-top: 50px; */
+    padding: 0;
+    margin: 0;
+}
+
+.history li {
+    font-size: 20px;
+    margin-bottom: 0.75rem;
+    /* or adjust as needed, e.g., 1rem */
+}
+
+.blurred {
+    filter: opacity(.25);
+}
+
+.history-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1em;
+    color: #1E293b;
+    margin: 8px 0px;
+}
+
+.test-card-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.number-display {
+    font-size: 3rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(3, 4rem);
+    grid-template-rows: repeat(4, 4rem);
+    gap: 1rem;
+    justify-content: center;
+}
+
+.key-btn {
+    padding: 1rem;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.key-btn:hover {
+    background-color: #aaa;
+}
+
+.key-empty {
+    visibility: hidden;
+}

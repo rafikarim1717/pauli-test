@@ -1,0 +1,16 @@
+.countdown-bar-wrapper {
+    height: 8px;
+    background-color: #e0e0e0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+
+.countdown-bar {
+    height: 100%;
+    background-color: #4171cc;
+    /* your primary blue */
+    transition: width 1s linear;
+}

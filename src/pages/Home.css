@@ -1,0 +1,187 @@
+/* Home.css */
+
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: white;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+    background-color: white;
+    gap: 24px;
+}
+
+.card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.title {
+    font-size: 8rem;
+    font-weight: 800;
+    color: #1E293b;
+    margin: 0;
+}
+
+.description {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 500;
+    color: #1E293b;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    justify-content: center;
+    width: min-content;
+    margin: 4rem auto 0;
+}
+
+.start-btn,
+.instructions-btn {
+    padding: .75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.start-btn {
+    background-color: #1E293b;
+    color: white;
+    border: none;
+}
+
+.start-btn:hover {
+    background-color: #4b5563;
+}
+
+.instructions-btn {
+    background-color: #cbd5e1;
+    color: #1E293b;
+    border: none;
+}
+
+.instructions-btn:hover {
+    background-color: #4b5563;
+}
+
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal-container {
+    position: relative;
+    background-color: white;
+    padding: 1.5rem;
+    box-shadow: 0 0.5rem 1rem #00000014;
+    min-width: 600px;
+    max-width: 800px;
+    border-radius: 0.5rem;
+    z-index: 15;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.modal-header button {
+    font-size: 1.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-content {
+    padding: 25px 0px;
+    /* min-height: 100px; */
+    /* margin-bottom: 1.5rem; */
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: end;
+}
+
+.modal-footer button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.375rem;
+    border: none;
+    cursor: pointer;
+    background-color: #1E293b;
+    color: white;
+}
+
+.modal-footer button:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Instructions */
+
+.instruction-page-container {
+    display: block;
+    padding: 1rem;
+}
+
+.instruction-page-container p {
+    line-height: 1.625em;
+}
+
+/* Test Options */
+
+.test-option {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.test-option label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.duration-container,
+.rounds-container,
+.name-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0.2rem;
+}
+
+input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.2rem;
+}
